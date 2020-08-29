@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    brscan-skey:
+        container_name: scan
+        volumes:
+            - '/home/$USER/scans:/scans'
+        environment:
+            - NAME=Scanner
+            - MODEL=MFC-L2700DW
+            - IPADDRESS=192.168.1.207
+        network_mode: host
+        restart: always
+        image: 'jankar/brscan-skey:latest'
